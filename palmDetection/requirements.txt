@@ -1,21 +1,26 @@
-scikit-learn
-
-install django
-
-install opencv-python opencv-python-headless tensorflow torch torchvision torchaudio scipy seaborn xgboost lightgbm catboost requests beautifulsoup4 lxml psycopg2-binary mysqlclient pymysql daphne channels gunicorn fastapi uvicorn
-
- 
-install  joblib numpy pandas matplotlib pillow djangorestframework gunicorn psycopg2-binary
-
-python manage.py migrate
-
-
-python manage.py runserver
 Django==4.2.16
-numpy
-pandas
-pillow
+djangorestframework
+gunicorn
 scikit-learn
 opencv-python
+opencv-python-headless
+tensorflow
+torch
+torchvision
+torchaudio
+scipy
+seaborn
+xgboost
+lightgbm
+catboost
+requests
+beautifulsoup4
+lxml
+psycopg2-binary
+joblib
+numpy
+pandas
 matplotlib
+pillow
+
 gunicorn
