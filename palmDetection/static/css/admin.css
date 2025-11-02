@@ -1,0 +1,193 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background-image: url("../images/admin.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+
+
+.login-frame {
+  
+  padding: 50px;
+  background-color: rgb(255, 255, 255, 0.4);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+
+  width: 1100px;
+}
+
+.title {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+
+.input-field:focus {
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.forget {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.role-selection {
+    margin-top: 15px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+}
+
+
+.radio-button {
+    margin-right: 5px; 
+}
+
+
+.role-selection label {
+    font-size: 14px;
+    color: #333; 
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.login-button {
+  padding: 20px 60px;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-button:hover {
+    opacity: 0.9;
+    transition: ease-in-out;
+    transition-delay: 0.1s;
+}
+
+
+.dropdown-container {
+    margin-bottom: 20px;
+  }
+  
+  .dropdown-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+  }
+
+
+
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 20px 40px;
+    text-align: center;
+  }
+  
+  .data-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .data-table td {
+    background-color: #ffffff;
+  }
+
+
+  .bttn {
+    float: right;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .bttn .tech-para {
+    font-weight: bold;
+  }
+
+  .add {
+    font-size: 30px;
+    color: black;
+  }
+
+  .table-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    color: black;
+  }
+  
+
+ 
+  

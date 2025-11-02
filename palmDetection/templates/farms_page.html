@@ -1,0 +1,16 @@
+{% extends "baseAdmin.html" %}
+
+{% load static %}
+
+{% block title %}Farms{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/farms.css' %}"> {% endblock %}
+
+{% block content %}
+  <div class="home">
+    <div class="button-container">
+    <a class="login-button" href="{% url 'farmsPageTabel' %}">Farms <i class="fa-solid fa-arrow-right-long"></i></a>
+
+    </div>
+  </div>
+{% endblock %}

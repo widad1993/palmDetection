@@ -1,0 +1,58 @@
+{% extends "baseAdmin.html" %}
+
+{% load static %}
+
+{% block title %}Administrator{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/admin.css' %}"> {% endblock %}
+
+{% block content %}
+<div class="home">
+    <div class="login-frame">
+       <form class="login-form" method="post">
+        {% csrf_token %}
+        <div class="bttn">
+            <p class="tech-para">Add Technician</p>
+            <a href="{% url 'add_technician' %}">
+                <i class="fa-solid fa-circle-plus add"></i>
+            </a>
+        </div>
+        <div class="table-container">
+            <table border="1" class="data-table">
+              <thead>
+                <tr>
+                  <th>Setting</th>
+                  <th>Last Login</th>
+                  <th>Password</th>
+                  <th>User name</th>
+                  <th>Technician's name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for technician in technicians %}
+                <tr>
+                  <td class="row-content">
+                    <a href="{% url 'delete_technician' technician.id %}">
+                        <i class="fa-solid fa-trash-can table-icon" style="color:red"></i>
+                    </a>
+                    <a href="{% url 'edit_technician' technician.id %}">
+                        <i class="fa-solid fa-square-pen table-icon"></i>
+                    </a>
+                  </td>
+                  <td>{{ technician.last_login|date:"Y-m-d H:i" }}</td>
+                  <td>********</td>
+                  <td>{{ technician.username }}</td>
+                  <td>{{ technician.name }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="5" style="text-align: center;">No technicians found.</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+       </form>
+    </div>
+  </div>
+{% endblock %}

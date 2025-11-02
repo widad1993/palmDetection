@@ -1,0 +1,51 @@
+{% extends "baseAdmin.html" %}
+
+{% load static %}
+
+{% block title %}Farm History{% endblock %}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/farms.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home">
+    <div class="login-frame">
+        <h2 class="title">الضابطة التاريخية للمزرعة: {{ farm.name }}</h2>
+        <div class="table-container">
+            <table border="1" class="data-table">
+                <thead>
+                    <tr>
+                        <th>الموقع</th>
+                        <th>صورة الضرر</th>
+                        <th>نوع الضرر</th>
+                        <th>التاريخ و الوقت</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in history_records %}
+                    <tr>
+                        <td>{{ record.location }}</td>
+                        <td>
+                            {% if record.image %}
+                              <a href="{{ record.image }}" target="_blank" style="text-decoration: none; color: rgb(0, 0, 0);">
+                              🖼️ Damage Image
+                              </a>
+                            {% else %}
+                                No Image
+                            {% endif %}
+                        </td>
+                        <td>{{ record.damage_type }}</td>
+                        <td>{{ record.timestamp }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="4">لا توجد سجلات متوفرة في الضابطة التاريخية لهذه المزرعة.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

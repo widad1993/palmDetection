@@ -1,0 +1,21 @@
+{% extends "baseAdmin.html" %}
+
+{% load static %}
+
+{% block title %}Farms{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/farms.css' %}"> {% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" value="{{ farm.name }}" placeholder="Farm Name" required>
+        <input type="text" name="owner" value="{{ farm.owner }}" placeholder="Farm Owner" required>
+        <input type="text" name="city" value="{{ farm.city }}" placeholder="City">
+        <input type="text" name="location" value="{{ farm.location }}" placeholder="Location">
+        <input type="text" name="subscription" value="{{ farm.subscription }}" placeholder="Subscription">
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+{% endblock %}

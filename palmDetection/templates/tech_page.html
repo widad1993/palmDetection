@@ -1,0 +1,30 @@
+{% extends "baseTech.html" %}
+
+{% load static %}
+
+{% block title %}Technicians{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/tech.css' %}">{% endblock %}
+
+{% block content %}
+<div class="home">
+  <div class="login-frame">
+      <form class="login-form" method="post" action="{% url 'analyze_drone_images' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <select name="farm_id" class="dropdown-field" required>
+              <option value="" disabled selected>Choose a Farm</option>
+               <!--<option disabled>الضابطة التاريخية</option>-->
+              {% for farm in farms %}
+              <option value="{{ farm.id }}">{{ farm.name }}</option>
+              {% endfor %}
+          </select>
+          <input type="url" class="input-field" name="drone_url" placeholder="أدخل رابط البث المباشر" >
+           <!-- إضافة حقل رفع الفيديو -->
+          <input type="file" name="video_file" accept="video/*" >
+          <div class="button-container">
+            <button type="submit" class="start-button">Start</button>
+        </div>
+      </form>
+  </div>
+</div>
+{% endblock %}

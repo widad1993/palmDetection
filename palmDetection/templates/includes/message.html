@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/message.css' %}">
+
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <li class="success-message">{{ message }}</li>
+            {% elif message.tags == 'error' %}
+                <li class="error-message">{{ message }}</li>
+            {% else %}
+                <li>{{ message }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+
+
+

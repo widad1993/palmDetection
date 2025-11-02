@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %} 
+{% block title %}Contact{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" /> {% endblock %}
+{% block content %}
+<div class="home">
+  <div class="login-frame">
+    <h1 class="title">Contact</h1>
+
+    <div class="icon-container">
+      <div class="icon-div">
+        <i class="fa-solid fa-phone my-icon"></i>
+        <p>+966564618246</p>
+      </div>
+  
+      <div class="icon-div">
+        <i class="fa-brands fa-whatsapp my-icon"></i>
+        <p>+966564618246</p>
+      </div>
+  
+      <div class="icon-div">
+        <i class="fa-solid fa-envelope my-icon"></i>
+        <p>palm.detection@gmail.com</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

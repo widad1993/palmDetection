@@ -1,0 +1,56 @@
+{% extends "baseTech.html" %}
+
+{% load static %}
+
+{% block title %}Technicians{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/tech.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="home">
+  <div class="login-frame">
+    <h2 class="title"> مزرعة {{ farm.name }}</h2>
+    <div class="table-container">
+      <table border="1" class="data-table">
+        <thead>
+          <tr>
+            <th>الموقع</th>
+            <th>صورة الضرر</th>
+            <th>نوع الضرر</th>
+            <th>التاريخ و الوقت</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in history %}
+          <tr style="white-space: nowrap;">
+            <td>{{ record.location }}</td>
+            <td>
+              {% if record.image %}
+                <a href="{{ record.image }}" target="_blank" style="text-decoration: none; color: black;">
+                🖼️ Damage Image
+                </a>
+              {% else %}
+                  No Image
+              {% endif %}
+          </td>
+            <td>{{ record.damage_type }}</td>
+            <td>{{ record.timestamp }}</td>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div>
+      <form method="post" action="{% url 'end_analysis' farm_id=farm.id %}">
+        {% csrf_token %}
+        <button class="login-button" type="submit">End</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

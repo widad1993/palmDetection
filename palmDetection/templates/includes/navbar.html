@@ -1,0 +1,18 @@
+
+{% load static %}
+<header>
+  <nav>
+    <div class="logo-div">
+      <a href="{% url 'homePage' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="nav-logo">
+      </a>
+    </div>
+    <ul>
+      <li><a href="{% url 'homePage' %}" class="{% if request.resolver_match.url_name == 'homePage' %}active{% endif %}">Home</a></li>
+      <li><a href="{% url 'aboutPage' %}" class="{% if request.resolver_match.url_name == 'aboutPage' %}active{% endif %}">About</a></li>
+      <li><a href="{% url 'contactPage' %}" class="{% if request.resolver_match.url_name == 'contactPage' %}active{% endif %}">Contact</a></li>
+    </ul>
+    <div></div>
+  </nav>
+</header>
+

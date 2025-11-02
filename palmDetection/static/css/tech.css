@@ -1,0 +1,202 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background-image: url("../images/tech.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+}
+
+
+.login-frame {
+  
+  padding: 50px;
+  background-color: rgb(255, 255, 255, 0.4);
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+
+  width: 900px;
+}
+
+.title {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.forget {
+  color: #666;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.role-selection {
+    margin-top: 15px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+}
+
+
+.radio-button {
+    margin-right: 5px; 
+}
+
+
+.role-selection label {
+    font-size: 14px;
+    color: #333; 
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.login-button {
+  padding: 10px 50px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+
+.dropdown-container { 
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.dropdown-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  appearance: none; /* لإزالة السهم الافتراضي */
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  background-image: url("/static/images/Arow.png"); /* استبدل بالمسار الصحيح للصورة */
+  background-repeat: no-repeat;
+  background-position: right 15px center; /* مكان السهم */
+  background-size: 16px 16px; /* حجم السهم */
+}
+
+.dropdown-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.dropdown-field:hover {
+  border-color: #28a745;
+}
+
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 20px 40px;
+    text-align: center;
+  }
+  
+  .data-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .data-table td {
+    background-color: #ffffff;
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .start-button {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: #555;
+  }
+  .table-container {
+    max-height: 400px; /* يحدد أقصى ارتفاع للجدول */
+    overflow-y: auto; /* يسمح بالتمرير الرأسي عند الحاجة */
+    border: 1px solid #ccc; /* إضافة حد للجدول */
+  }

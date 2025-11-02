@@ -1,0 +1,56 @@
+{% extends "baseAdmin.html" %}
+
+{% load static %}
+
+{% block title %}Farms{% endblock %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/farms.css' %}"> {% endblock %}
+
+{% block content %}
+<div class="home">
+    <div class="login-frame">
+       <form class="login-form" method="post">
+        {% csrf_token %}
+        <div class="bttn">
+            <p class="tech-para">Add Farm</p>
+            <a href="{% url 'add_farm' %}"><i class="fa-solid fa-circle-plus add"></i></a>
+        </div>
+        <div class="table-container">
+            <table border="1" class="data-table">
+              <thead>
+                <tr>
+                  <th>Setting</th>
+                  <th>Subscription</th>
+                  <th>Location</th>
+                  <th>City</th>
+                  <th>Farm owner</th>
+                  <th>Farm name</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for farm in farms %}
+                <tr>
+                  <td class="row-content">
+                    <a href="{% url 'delete_farm' farm.id %}">
+                        <i class="fa-solid fa-trash-can table-icon" style="color:red"></i>
+                    </a>
+                    <a href="{% url 'edit_farm' farm.id %}">
+                        <i class="fa-solid fa-square-pen table-icon"></i>
+                    </a>
+                  </td>
+                  <td>{{ farm.subscription }}</td>
+                  <td>{{ farm.location }}</td>
+                  <td>{{ farm.city }}</td>
+                  <td>{{ farm.owner }}</td>
+                  <td>
+                    <a href="{% url 'farm_history' farm.id %}">{{ farm.name }}</a>
+                </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+       </form>
+    </div>
+</div>
+{% endblock %}
