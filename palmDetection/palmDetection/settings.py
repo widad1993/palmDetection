@@ -28,8 +28,25 @@ SECRET_KEY = 'django-insecure-bwyj=iqg_%8=*mo=5-x^@cl+k114k$^kkszh%jq&+78*c@81ux
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
 
+# اسم المضيفات المسموح بها
+ALLOWED_HOSTS = [
+    ".onrender.com",           # أي نطاق من Render
+    "localhost", "127.0.0.1",  # للتجربة محليًا
+]
+
+# اجلب اسم الدومين الخارجي من Render (أفضل حل ديناميكي)
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# إعدادات CSRF الموثوقة
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.onrender.com",
+]
+if RENDER_EXTERNAL_HOSTNAME:
+    CSRF_TRUSTED_ORIGINS.append(f"https://{RENDER_EXTERNAL_HOSTNAME}")
 
 # Application definition
 
