@@ -1,4 +1,4 @@
-# palmDetection — نظام كشف سوسة النخيل (Django)
+# palmDetection — نظام فاحص النخيل (Django)
 
 تطبيق ويب مبني بإطار Django لإدارة المزارع وتحليل الصور/الفيديو لاكتشاف سوسة النخيل باستخدام نموذج محفوظ (`base/ml_models/img_model.pkl`).
 
