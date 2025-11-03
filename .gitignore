@@ -12,3 +12,6 @@ db.sqlite3
 # Media/static
 media/
 staticfiles/
+ 
+# Archives
+*.zip
