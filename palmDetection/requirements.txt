@@ -1,7 +1,7 @@
 Django==4.2.16
 djangorestframework
 gunicorn
-scikit-learn
+scikit-learn==1.6.0
 opencv-python
 opencv-python-headless
 tensorflow

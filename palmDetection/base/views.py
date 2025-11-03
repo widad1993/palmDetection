@@ -18,7 +18,9 @@ import os
 import joblib
 import time
 
-with open('base/ml_models/img_model.pkl', 'rb') as file:
+# Load ML model using an absolute path relative to BASE_DIR to avoid CWD issues
+model_path = os.path.join(settings.BASE_DIR, 'base', 'ml_models', 'img_model.pkl')
+with open(model_path, 'rb') as file:
     model = joblib.load(file)
     print("Number of features expected by the model:", model.n_features_in_)
 
