@@ -33,12 +33,17 @@ ALLOWED_HOSTS = ['*']   # مؤقتًا
 CSRF_TRUSTED_ORIGINS = [
     'https://palmdetection.ethra2.com',
     'http://palmdetection.ethra2.com',
+    # نطاقك الجديد وما يتفرع منه
+    'https://palm-detection.online',
+    'http://palm-detection.online',
+    'https://*.palm-detection.online',
+    # محلي
     'http://127.0.0.1:9200',
     'http://localhost:9200',
     # إن كنت تستخدم نفق خارجي فأضِف مجاله أيضاً:
     'https://*.ngrok-free.app',
     'https://*.trycloudflare.com',
-    ]
+]
 # Application definition
 
 INSTALLED_APPS = [
